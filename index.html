@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <title>Paulo Jaquetto</title>
+  </head>
+  <body>
+    <div class="hero">
+      <img src="./myhero.jpg" alt="Hero Image" />
+      <div class="overlay-text">
+        <p>Olá, meu nome é</p>
+        <h1>PAULO JAQUETTO</h1>
+        <p>e sou um <span class="especialidade">UI / UX DESIGNER</span></p>
+        <a href="./contato.html">
+          <button class="cta-button">Contrate</button></a
+        >
+      </div>
+    </div>
+
+    <div class="especialidades">
+      <div class="card card-1">
+        <img src="./html-144.png" alt="HTML Icon" />
+        <h3>HTML</h3>
+        <p>
+          Experiência em criar estruturas de páginas web semânticas e acessíveis
+          usando HTML.
+        </p>
+      </div>
+      <div class="card card-2">
+        <img src="./css-144.png" alt="CSS Icon" />
+        <h3>CSS</h3>
+        <p>
+          Habilidade em estilizar e criar layouts responsivos, criativos, e
+          modernos utilizando CSS.
+        </p>
+      </div>
+      <div class="card card-3">
+        <img src="./150.png" alt="JavaScript Icon" />
+        <h3>JavaScript</h3>
+        <p>
+          Conhecimento básico em desenvolvimento de funcionalidades e dinâmicas
+          com JavaScript.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const cards = document.querySelectorAll(".card");
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px",
+          threshold: 1.0,
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        cards.forEach((card) => {
+          observer.observe(card);
+        });
+      });
+    </script>
+
+    <!-- Projetos Section -->
+    <div class="portifolio">
+      <!-- Projeto Biolux -->
+      <a href="https://paulojaqueto.github.io/Biolux/">
+        <img class="animated" src="./pesonal-portifolio.png" alt="" />
+        <div class="project animated">
+          <div class="overlay">
+            <h2>Biolux</h2>
+            <p>
+              Este projeto foi desenvolvido como parte do meu portfólio, focando
+              na criação de um site para a empresa fictícia Biolux. Utilizando
+              HTML, CSS e JavaScript, o objetivo foi criar uma plataforma que
+              refletisse os valores da Biolux: sustentabilidade, saúde e
+              bem-estar.
+            </p>
+          </div>
+          <img src="./tablet-bio.png" class="project-img" alt="Projeto 1" />
+        </div>
+      </a>
+      <!-- Fim do Projeto Biolux -->
+
+      <!-- Projeto Pizza Mia -->
+      <div class="project animated">
+        <div class="overlay">
+          <h2>Pizza Mia</h2>
+          <p>
+            Este projeto foi desenvolvido como parte do meu portfólio, com foco
+            na criação de um site para a pizzaria fictícia Pizza Mia. Utilizando
+            HTML, CSS e JavaScript, o objetivo foi criar uma plataforma que
+            capturasse a essência e a experiência gastronômica única oferecida
+            pela Pizza Mia.
+          </p>
+        </div>
+        <img src="./pizza.png" class="project-img" alt="Projeto 2" />
+      </div>
+      <!-- Fim do Projeto Pizza Mia -->
+
+      <!-- Projeto ModaOn -->
+      <div class="project animated">
+        <div class="overlay">
+          <h2>ModaOn</h2>
+          <p>
+            Este projeto foi desenvolvido como parte do meu portfólio, com foco
+            na criação de um site para a empresa fictícia ModaOn. Utilizando
+            HTML, CSS e JavaScript, o objetivo foi criar uma plataforma que
+            refletisse as tendências modernas e a inovação no mundo da moda.
+          </p>
+        </div>
+        <img src="./moda.png" class="project-img" alt="Projeto ModaOn" />
+      </div>
+      <!-- Fim do Projeto ModaOn -->
+    </div>
+    <!-- Fim da Projetos Section -->
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>MAIS SOBRE MIM</h3>
+          <ul>
+            <li><a href="./quemsou.html">Quem sou</a></li>
+            <li><a href="./formação.html">Minha Formação</a></li>
+            <li><a href="./historico.html">Histórico</a></li>
+            <li><a href="./contato.html">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Envie seu e-mail</h3>
+          <form
+            class="newsletter-form"
+            id="contact-form"
+            action="https://formsubmit.co/paulgoku41@gmail.com"
+            method="POST"
+            onsubmit="showThankYouMessage(event)"
+          >
+            <!-- Campos escondidos -->
+            <input
+              type="hidden"
+              name="_subject"
+              value="Novo contato do site!"
+            />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input
+              type="hidden"
+              name="_next"
+              value="https://formsubmit.co/paulgoku41@gmail.com"
+            />
+
+            <input type="email" name="email" placeholder="e-mail" required />
+            <button type="submit">CONTATE-ME</button>
+          </form>
+
+          <div
+            id="thank-you-message"
+            style="display: none; text-align: start; margin-top: 20px"
+          >
+            <h2>Obrigado pelo seu contato!</h2>
+            <p>
+              Seu e-mail foi enviado com sucesso. <br />
+              Entrarei em contato em breve.
+            </p>
+          </div>
+
+          <div class="social-media">
+            <a href="https://www.facebook.com/paulo.marchi.5283" target="_blank"
+              ><i class="fab fa-facebook-square"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/paulo-jaquetto-470580188/"
+              target="_blank"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a href="https://dribbble.com/paulo_j" target="_blank"
+              ><i class="fab fa-dribbble-square"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Adicione o script aqui -->
+    <script src="animations.js"></script>
+  </body>
+</html>

@@ -1,0 +1,552 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* Hero image */
+.hero {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: start;
+  width: 100%;
+  max-width: 80%;
+  padding: 1rem;
+}
+
+.overlay-text p,
+.overlay-text h1,
+.overlay-text .especialidade,
+.cta-button {
+  opacity: 0;
+  animation: fade-in 2s ease-out forwards;
+}
+
+.overlay-text p:nth-child(1) {
+  animation-delay: 0.5s;
+}
+.overlay-text h1 {
+  animation-delay: 1s;
+}
+.overlay-text p:nth-child(3) {
+  animation-delay: 1.5s;
+}
+.cta-button {
+  animation-delay: 2s;
+}
+
+.overlay-text h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(1.3rem, 3vw, 2.5rem);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+}
+
+.overlay-text p {
+  font-size: clamp(0.7rem, 1.5vw, 1.5rem);
+  margin-bottom: 0.2rem;
+  white-space: nowrap;
+}
+
+.overlay-text p span {
+  font-size: clamp(0.7rem, 1.5vw, 1.5rem);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+}
+
+.especialidade {
+  font-size: clamp(0.8rem, 1.5vw, 1.4rem);
+  font-weight: bolder;
+  color: #e65650;
+  white-space: nowrap;
+  border-right: 2px solid #e65650; /* Adiciona um cursor piscante */
+  animation: blink-caret 0.75s step-end infinite; /* Animação do cursor piscante */
+}
+
+/* Animação do cursor piscante */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #e65650;
+  }
+}
+
+.cta-button {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #e65650;
+  border: 1px solid #e65650;
+  color: white;
+  padding: 0.5rem 1rem;
+  margin-top: 0.2rem;
+  font-size: clamp(0.7rem, 1.2vw, 1rem);
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  white-space: nowrap;
+}
+
+.cta-button:hover {
+  background-color: #c0392b;
+}
+
+/* Animations */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Media Queries para smartphones */
+@media (max-width: 480px) {
+  .overlay-text {
+    max-width: 100%; /* Reduz ainda mais a largura máxima do texto overlay se necessário */
+    padding: 1rem; /* Ajusta o padding interno */
+  }
+
+  .overlay-text h1 {
+    font-size: clamp(0.7rem, 3vw, 1.4rem); /* Ajusta o tamanho do título */
+  }
+
+  .overlay-text p {
+    font-size: clamp(0.42rem, 2vw, 0.84rem); /* Ajusta o tamanho do texto */
+  }
+
+  .overlay-text p span {
+    font-size: clamp(
+      0.42rem,
+      2vw,
+      0.84rem
+    ); /* Ajusta o tamanho do texto especialidade */
+  }
+
+  .cta-button {
+    font-size: clamp(0.42rem, 2vw, 0.84rem); /* Ajusta o tamanho do botão */
+    padding: 0.25rem 0.5rem; /* Ajusta o padding do botão */
+  }
+}
+
+/* Media Queries para tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  .overlay-text {
+    max-width: 90%; /* Reduz a largura máxima do texto overlay */
+  }
+
+  .overlay-text h1 {
+    font-size: clamp(1.38rem, 3vw, 2.875rem); /* Ajusta o tamanho do título */
+  }
+
+  .overlay-text p {
+    font-size: clamp(0.805rem, 2vw, 1.355rem); /* Ajusta o tamanho do texto */
+  }
+
+  .overlay-text p span {
+    font-size: clamp(
+      0.805rem,
+      2vw,
+      1.355rem
+    ); /* Ajusta o tamanho do texto especialidade */
+  }
+
+  .cta-button {
+    font-size: clamp(0.805rem, 2vw, 1.355rem); /* Ajusta o tamanho do botão */
+    padding: 0.3rem 0.6rem; /* Ajusta o padding do botão */
+  }
+}
+
+/* Especialidades */
+.especialidades {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.card {
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  padding: 1.25rem;
+  text-align: center;
+  width: 250px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.card img {
+  width: 125px;
+  height: 125px;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 1.125rem;
+  color: #666;
+}
+
+.card-1.animate {
+  animation: slide-in-left 1s forwards;
+  animation-delay: 0s;
+}
+
+.card-2.animate {
+  animation: slide-in-left 1s forwards;
+  animation-delay: 1s;
+}
+
+.card-3.animate {
+  animation: slide-in-left 1s forwards;
+  animation-delay: 2s;
+}
+
+/* Media Queries para ajuste de layout em diferentes tamanhos de tela */
+@media (max-width: 768px) {
+  .card {
+    width: 125px; /* Diminui a largura em 50% */
+    padding: 0.625rem; /* Diminui o padding em 50% */
+  }
+
+  .card img {
+    width: 62.5px; /* Diminui a largura em 50% */
+    height: 62.5px; /* Diminui a altura em 50% */
+  }
+
+  .card h3 {
+    font-size: 0.75rem; /* Diminui o tamanho da fonte em 50% */
+  }
+
+  .card p {
+    font-size: 0.5625rem; /* Diminui o tamanho da fonte em 50% */
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 75px; /* Diminui a largura em 70% */
+    padding: 0.375rem; /* Diminui o padding em 70% */
+  }
+
+  .card img {
+    width: 37.5px; /* Diminui a largura em 70% */
+    height: 37.5px; /* Diminui a altura em 70% */
+  }
+
+  .card h3 {
+    font-size: 0.45rem; /* Diminui o tamanho da fonte em 70% */
+  }
+
+  .card p {
+    font-size: 0.3375rem; /* Diminui o tamanho da fonte em 70% */
+  }
+}
+
+.anima img {
+  margin-left: 5%;
+}
+
+/* Projetos */
+.portifolio {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.animated {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 2s ease-out, opacity 2s ease-out;
+}
+
+/* Media Queries para smartphones */
+@media (max-width: 480px) {
+  .animated {
+    width: 35%; /* Ajuste a largura da imagem para smartphones */
+  }
+}
+
+.project {
+  position: relative;
+  display: inline-block;
+  margin: 10px auto;
+  margin-bottom: 50px;
+  width: 75%;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 2s ease-out, opacity 2s ease-out;
+}
+
+.project-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.overlay h2 {
+  margin: 0;
+  padding-bottom: 0.5rem;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: white; /* Define a cor do texto como branca */
+  text-decoration: none;
+}
+
+.overlay p {
+  margin: 0;
+  text-align: justify;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  color: white; /* Define a cor do texto como branca */
+  text-decoration: none;
+}
+
+.project .overlay a {
+  color: inherit; /* Garante que a cor do texto do link herde a cor branca definida anteriormente */
+  text-decoration: none; /* Remove a decoração do link */
+}
+
+.project:hover .overlay {
+  opacity: 1;
+}
+
+/* Classes for elements when in view */
+.animated.in-view {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Media Queries para tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  .project {
+    width: 75% !important;
+    margin-bottom: 10px;
+  }
+
+  .overlay {
+    padding: 1.5rem;
+  }
+
+  .overlay h2 {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    padding-bottom: 0.5rem;
+  }
+
+  .overlay p {
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+  }
+}
+
+/* Media Queries para smartphones */
+@media (max-width: 480px) {
+  .project {
+    width: 70% !important;
+    margin-bottom: 5px;
+  }
+
+  .overlay {
+    padding: 0.5rem;
+  }
+
+  .overlay h2 {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    padding-bottom: 0.3rem;
+  }
+
+  .overlay p {
+    font-size: clamp(0.6rem, 1.5vw, 0.7rem);
+  }
+}
+
+/*footer*/
+footer {
+  background-color: black;
+  color: white;
+  padding: 40px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 20px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.newsletter-form {
+  display: flex;
+  align-items: center;
+}
+
+.newsletter-form input[type="email"] {
+  padding: 10px;
+  border: none;
+  margin-right: 10px;
+}
+
+.newsletter-form button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #e74c3c;
+  color: white;
+  cursor: pointer;
+}
+
+.newsletter-form button:hover {
+  background-color: #c0392b;
+}
+
+.social-media {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.social-media a {
+  font-size: 40px;
+  margin-right: 20px;
+}
+
+.social-media .fa-facebook-square {
+  color: #3b5998;
+}
+
+.social-media .fa-linkedin {
+  color: #0e76a8;
+}
+
+.social-media .fa-dribbble-square {
+  color: #ea4c89;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    align-items: flex-start;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .footer-section {
+    width: 100%;
+    text-align: left;
+  }
+
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .newsletter-form input[type="email"] {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+
+  .newsletter-form button {
+    width: 100%;
+  }
+
+  button[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .social-media {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

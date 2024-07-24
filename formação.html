@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <title>Formação - Paulo Jaquetto</title>
+  </head>
+  <body>
+    <div class="hero">
+      <img src="./myhero.jpg" alt="Hero Image" />
+      <div class="overlay-text">
+        <p>Olá, meu nome é</p>
+        <h1>PAULO JAQUETTO</h1>
+        <p>e sou um <span class="especialidade">UI / UX DESIGNER</span></p>
+        <a href="./contato.html">
+          <button class="cta-button">Contrate</button></a
+        >
+      </div>
+    </div>
+
+    <nav class="navigation">
+      <a href="index.html" class="nav-link">Voltar para Home</a>
+    </nav>
+
+    <section class="about-me">
+      <h1>
+        Formação UNIP Universidade Paulista - Curso de Publicidade e Propaganda
+      </h1>
+      <div class="divider"></div>
+      <p>
+        Iniciei minha jornada acadêmica em Comunicação Social com foco em
+        Publicidade e Propaganda no ano de 2003 na cidade de Campinas - SP,
+        concluindo meu curso em 2006. Durante esse período, tive a oportunidade
+        de mergulhar profundamente em várias áreas cruciais para a criação de
+        estratégias de comunicação eficazes e inovadoras.
+      </p>
+
+      <p><strong>Experiência e Aprendizado</strong></p>
+      <p>
+        Ao longo do curso, adquiri uma base sólida em diversos aspectos da
+        comunicação e publicidade. Aprendi sobre técnicas de criação
+        publicitária, planejamento de campanhas, comportamento do consumidor e
+        estratégias de marketing. O curso também abordou aspectos fundamentais
+        do design gráfico, redação criativa e análise de mercado, que foram
+        essenciais para desenvolver minhas habilidades em criar mensagens
+        impactantes e visualmente atraentes.
+      </p>
+
+      <p><strong>Aplicação dos Conhecimentos na Programação</strong></p>
+      <p>
+        A sólida formação em criação e design que obtive durante a graduação tem
+        sido extremamente valiosa na minha carreira na área de programação. A
+        compreensão profunda dos princípios de design gráfico e criação me
+        permite criar interfaces e experiências de usuário que não só atendem
+        aos objetivos técnicos, mas também são esteticamente agradáveis e
+        intuitivas.
+      </p>
+
+      <p>
+        A capacidade de pensar criativamente e entender as necessidades do
+        usuário, adquirida na publicidade e propaganda, me ajuda a projetar
+        soluções que são visualmente atraentes e eficazes. Além disso, o
+        conhecimento em planejamento e análise de mercado me permite adotar uma
+        abordagem mais estratégica na programação, garantindo que as soluções
+        tecnológicas sejam alinhadas com as necessidades do cliente e as
+        tendências do mercado.
+      </p>
+
+      <p>
+        Em resumo, minha formação em Publicidade e Propaganda não apenas me
+        proporcionou uma compreensão aprofundada da criação e design, mas também
+        me capacitou a aplicar esses conhecimentos de maneira eficaz na área de
+        programação, resultando em projetos que combinam funcionalidade técnica
+        com excelência estética.
+      </p>
+    </section>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Times New Roman", Times, serif;
+      }
+
+      .hero {
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+      }
+
+      .hero img {
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .overlay-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: start;
+        width: 100%;
+        max-width: 80%;
+        padding: 1rem;
+      }
+
+      .overlay-text p,
+      .overlay-text h1,
+      .overlay-text .especialidade,
+      .cta-button {
+        opacity: 0;
+        animation: fade-in 2s ease-out forwards;
+      }
+
+      .overlay-text p:nth-child(1) {
+        animation-delay: 0.5s;
+      }
+      .overlay-text h1 {
+        animation-delay: 1s;
+      }
+      .overlay-text p:nth-child(3) {
+        animation-delay: 1.5s;
+      }
+      .cta-button {
+        animation-delay: 2s;
+      }
+
+      .overlay-text h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: clamp(1.3rem, 3vw, 2.5rem);
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        white-space: nowrap;
+      }
+
+      .overlay-text p {
+        font-size: clamp(0.7rem, 1.5vw, 1.5rem);
+        margin-bottom: 0.2rem;
+        white-space: nowrap;
+      }
+
+      .overlay-text p span {
+        font-size: clamp(0.7rem, 1.5vw, 1.5rem);
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bolder;
+      }
+
+      .especialidade {
+        font-size: clamp(0.8rem, 1.5vw, 1.4rem);
+        font-weight: bolder;
+        color: #e65650;
+        white-space: nowrap;
+        border-right: 2px solid #e65650;
+        animation: blink-caret 0.75s step-end infinite;
+      }
+
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: #e65650;
+        }
+      }
+
+      .cta-button {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #e65650;
+        border: 1px solid #e65650;
+        color: white;
+        padding: 0.5rem 1rem;
+        margin-top: 0.2rem;
+        font-size: clamp(0.7rem, 1.2vw, 1rem);
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: 1rem;
+        white-space: nowrap;
+      }
+
+      .cta-button:hover {
+        background-color: #c0392b;
+      }
+
+      @keyframes fade-in {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slide-in-left {
+        0% {
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      .navigation {
+        margin: 20px;
+        text-align: left;
+      }
+
+      .nav-link {
+        color: #e65650;
+        text-decoration: none;
+        font-size: 1rem;
+      }
+
+      .nav-link:hover {
+        text-decoration: underline;
+      }
+
+      .about-me {
+        padding: 3rem;
+        max-width: 800px;
+        margin: 50px auto;
+        background-color: rgb(244, 247, 252);
+      }
+
+      .about-me h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #333;
+        text-align: center;
+      }
+
+      .divider {
+        border: none;
+        border-top: 1px solid #ccc; /* Linha fina */
+        margin: 16px 0; /* Espaço acima e abaixo */
+        width: 50%; /* Ajuste a largura conforme necessário */
+        margin-left: auto;
+        margin-right: auto; /* Centraliza a linha */
+      }
+
+      .about-me p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        color: #555;
+        margin-bottom: 1rem;
+      }
+
+      @media (max-width: 480px) {
+        .overlay-text {
+          max-width: 100%;
+          padding: 1rem;
+        }
+
+        .overlay-text h1 {
+          font-size: clamp(0.7rem, 3vw, 1.4rem);
+        }
+
+        .overlay-text p {
+          font-size: clamp(0.42rem, 2vw, 0.84rem);
+        }
+
+        .overlay-text p span {
+          font-size: clamp(0.42rem, 2vw, 0.84rem);
+        }
+
+        .cta-button {
+          font-size: clamp(0.42rem, 2vw, 0.84rem);
+          padding: 0.25rem 0.5rem;
+        }
+      }
+
+      @media (min-width: 481px) and (max-width: 768px) {
+        .overlay-text {
+          max-width: 90%;
+        }
+
+        .overlay-text h1 {
+          font-size: clamp(1.38rem, 3vw, 2.875rem);
+        }
+
+        .overlay-text p {
+          font-size: clamp(0.805rem, 2vw, 1.355rem);
+        }
+
+        .overlay-text p span {
+          font-size: clamp(0.805rem, 2vw, 1.355rem);
+        }
+
+        .cta-button {
+          font-size: clamp(0.805rem, 2vw, 1.355rem);
+          padding: 0.3rem 0.6rem;
+        }
+      }
+    </style>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>MAIS SOBRE MIM</h3>
+          <ul>
+            <li><a href="./quemsou.html">Quem sou</a></li>
+            <li><a href="./formação.html">Minha Formação</a></li>
+            <li><a href="./historico.html">Histórico</a></li>
+            <li><a href="./contato.html">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Envie seu e-mail</h3>
+
+          <!--FORMULARIO-->
+          <form
+            class="newsletter-form"
+            id="contact-form"
+            action="https://formsubmit.co/paulgoku41@gmail.com"
+            method="POST"
+            onsubmit="showThankYouMessage(event)"
+          >
+            <!-- Campos escondidos -->
+            <input
+              type="hidden"
+              name="_subject"
+              value="Novo contato do site!"
+            />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input
+              type="hidden"
+              name="_next"
+              value="https://formsubmit.co/paulgoku41@gmail.com"
+            />
+
+            <input type="email" name="email" placeholder="e-mail" required />
+            <button type="submit">CONTATE-ME</button>
+          </form>
+
+          <div
+            id="thank-you-message"
+            style="display: none; text-align: start; margin-top: 20px"
+          >
+            <h2>Obrigado pelo seu contato!</h2>
+            <p>
+              Seu e-mail foi enviado com sucesso. <br />
+              Entrarei em contato em breve.
+            </p>
+          </div>
+
+          <div class="social-media">
+            <a href="https://www.facebook.com/paulo.marchi.5283" target="_blank"
+              ><i class="fab fa-facebook-square"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/paulo-jaquetto-470580188/"
+              target="_blank"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+            <a href="https://dribbble.com/paulo_j" target="_blank"
+              ><i class="fab fa-dribbble-square"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Adicione o script aqui -->
+    <script src="animations.js"></script>
+  </body>
+</html>
